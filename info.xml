@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<module name="dynacase-admin-vault-ui" disabled="no" version="3.2.5"
+    release="0">
+
+    <description>UI to manage vaultn.
+    </description>
+
+    <requires>
+        <module comp='ge' version='3.2.5' name='dynacase-core'/>
+        <module comp='ge' version='1.0.0' name='dynacase-admin'/>
+    </requires>
+
+    <post-install>
+        <process command="programs/record_application VAULT I">
+            <label lang="en">Record VAULT application in database</label>
+        </process>
+        <process
+        command="./wsh.php --api=importDocuments --file=./VAULT/Data/Init.csv">
+          <label lang="en">Initializing VAULT roles and ACLs</label>
+        </process>
+        <process command="programs/update_catalog" />
+    </post-install>
+
+    <post-upgrade>
+        <process command="programs/pre_migration VAULT" />
+        <process command="programs/record_application VAULT U">
+            <label lang="en">Update VAULT application in database</label>
+        </process>
+        <process command="programs/post_migration VAULT" />
+        <process command="programs/update_catalog" />
+    </post-upgrade>
+
+    <changelog>
+    </changelog>
+
+</module>

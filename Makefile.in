@@ -1,0 +1,19 @@
+PACKAGE = dynacase-admin-vault-ui
+VERSION = 3.2.5
+utildir = @PUBRULE@
+pubdir = @prefix@
+srcdir = @srcdir@
+applib = FDL
+appname = VAULT
+TAR = tar
+GZIP_ENV = --best
+
+export PACKAGE utildir pubdir applib appname
+
+SUBDIR= Actions Apps Data Images Scripts
+
+include $(utildir)/PubRule
+
+clean:
+	/bin/rm -f *.*~ config.* Makefile configure $(appname)_init.php info.xml $(PACKAGE)-*webinst
+	/bin/rm -fr autom4te.cache

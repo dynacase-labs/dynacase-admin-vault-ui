@@ -1,0 +1,215 @@
+# French translations for dynacase-admin-uis package
+# Traductions françaises du paquet dynacase-admin-uis.
+# Copyright (C) 2013 THE dynacase-admin-uis'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the dynacase-admin-uis package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dynacase-admin-uis\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-16 16:17+0100\n"
+"PO-Revision-Date: 2013-01-16 16:17+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, php-format
+msgid "%.02f Gb"
+msgstr ""
+
+#, php-format
+msgid "%.02f Kb"
+msgstr ""
+
+#, php-format
+msgid "%.02f Mb"
+msgstr ""
+
+#, php-format
+msgid "%d Gb"
+msgstr ""
+
+#, php-format
+msgid "%d Kb"
+msgstr ""
+
+#, php-format
+msgid "%d Mb"
+msgstr ""
+
+#, php-format
+msgid "%d Tb"
+msgstr ""
+
+#, php-format
+msgid "%d bytes"
+msgstr ""
+
+#, php-format
+msgid "%d stored files"
+msgstr ""
+
+#, php-format
+msgid "%s directory not empty"
+msgstr ""
+
+#, php-format
+msgid "%s directory not found"
+msgstr ""
+
+#, php-format
+msgid "%s directory not writable"
+msgstr ""
+
+#, php-format
+msgid "Cannot adding : [%s]"
+msgstr ""
+
+msgid "Capacity"
+msgstr ""
+
+msgid "Clear orphan"
+msgstr ""
+
+msgid "Directory"
+msgstr ""
+
+#, php-format
+msgid "Error : Cleaning %s  status %d"
+msgstr ""
+
+msgid "Free"
+msgstr ""
+
+msgid "Gb"
+msgstr ""
+
+msgid "Generate new vault"
+msgstr ""
+
+msgid "Increase FS"
+msgstr ""
+
+msgid "Increase vault size"
+msgstr ""
+
+msgid "Kb"
+msgstr ""
+
+msgid "Mb"
+msgstr ""
+
+msgid "Move FS"
+msgstr ""
+
+msgid "Move directory"
+msgstr ""
+
+msgid "New Vault FS"
+msgstr ""
+
+msgid "New directory"
+msgstr ""
+
+msgid "New size"
+msgstr ""
+
+#, php-format
+msgid "Orphan Cleaned in %s directory"
+msgstr ""
+
+msgid "Orphean"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Tb"
+msgstr ""
+
+msgid "Trash"
+msgstr ""
+
+msgid "Used"
+msgstr ""
+
+msgid "Vault"
+msgstr ""
+
+msgid "Vault Management"
+msgstr ""
+
+msgid "Vault manager"
+msgstr ""
+
+msgid "Vault user"
+msgstr ""
+
+#, php-format
+msgid "adding %s"
+msgstr ""
+
+msgid "analyze vaults occupation"
+msgstr ""
+
+#, php-format
+msgid "cannot write  %s"
+msgstr ""
+
+msgid "create new vault"
+msgstr ""
+
+#, php-format
+msgid "create vault %s"
+msgstr ""
+
+#, php-format
+msgid "csv file <%s> wroted"
+msgstr ""
+
+msgid "delete orphan"
+msgstr ""
+
+msgid "increase size vault"
+msgstr ""
+
+msgid "million bytes"
+msgstr ""
+
+msgid "million of Megabytes"
+msgstr ""
+
+msgid "move root directory vault"
+msgstr ""
+
+#, php-format
+msgid "new directory %s"
+msgstr ""
+
+msgid "no vault initialised."
+msgstr ""
+
+msgid "show vaults occupation"
+msgstr ""
+
+#, php-format
+msgid "the new size must be upper than %s"
+msgstr ""
+
+msgid "thousands bytes"
+msgstr ""
+
+msgid "thousands of Megabytes"
+msgstr ""
+
+#, php-format
+msgid "vault already created %s: aborted\n"
+msgstr ""
+
+msgid "view image for free size"
+msgstr ""
