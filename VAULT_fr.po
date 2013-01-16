@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-16 16:17+0100\n"
+"POT-Creation-Date: 2013-01-22 17:05+0100\n"
 "PO-Revision-Date: 2013-01-16 16:17+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -20,196 +20,188 @@ msgstr ""
 
 #, php-format
 msgid "%.02f Gb"
-msgstr ""
+msgstr "%.02f Go"
 
 #, php-format
 msgid "%.02f Kb"
-msgstr ""
+msgstr "%.02f Ko"
 
 #, php-format
 msgid "%.02f Mb"
-msgstr ""
+msgstr "%.02f Mo"
 
 #, php-format
 msgid "%d Gb"
-msgstr ""
+msgstr "%d Go"
 
 #, php-format
 msgid "%d Kb"
-msgstr ""
+msgstr "%d Ko"
 
 #, php-format
 msgid "%d Mb"
-msgstr ""
+msgstr "%d Mo"
 
 #, php-format
 msgid "%d Tb"
-msgstr ""
+msgstr "%d To"
 
 #, php-format
 msgid "%d bytes"
-msgstr ""
+msgstr "%d octets"
 
 #, php-format
 msgid "%d stored files"
-msgstr ""
+msgstr "%d fichiers stockés"
 
 #, php-format
 msgid "%s directory not empty"
-msgstr ""
+msgstr "répertoire %s non vide"
 
 #, php-format
 msgid "%s directory not found"
-msgstr ""
+msgstr "répertoire %s non trouvé"
 
 #, php-format
 msgid "%s directory not writable"
-msgstr ""
+msgstr "répertoire %s non accessible en écriture"
 
 #, php-format
 msgid "Cannot adding : [%s]"
-msgstr ""
+msgstr "Ajout impossible : [%s]"
 
 msgid "Capacity"
-msgstr ""
+msgstr "Capacité"
 
 msgid "Clear orphan"
-msgstr ""
+msgstr "Supprimer les orphelins"
 
 msgid "Directory"
-msgstr ""
+msgstr "Répertoire"
 
 #, php-format
 msgid "Error : Cleaning %s  status %d"
-msgstr ""
+msgstr "Erreur : Nettoyage %s état %d"
 
 msgid "Free"
-msgstr ""
+msgstr "Libre"
 
 msgid "Gb"
-msgstr ""
+msgstr "Go"
 
 msgid "Generate new vault"
-msgstr ""
+msgstr "Créer un nouveau coffre"
 
 msgid "Increase FS"
-msgstr ""
+msgstr "Augmenter le FS"
 
 msgid "Increase vault size"
-msgstr ""
+msgstr "Augmenter la taille du coffre"
 
 msgid "Kb"
-msgstr ""
+msgstr "Ko"
 
 msgid "Mb"
-msgstr ""
+msgstr "Mo"
 
 msgid "Move FS"
-msgstr ""
+msgstr "Déplacer FS"
 
 msgid "Move directory"
-msgstr ""
+msgstr "Déplacer le répertoire"
 
 msgid "New Vault FS"
-msgstr ""
+msgstr "Nouveau coffre"
 
 msgid "New directory"
-msgstr ""
+msgstr "Nouveau répertoire"
 
 msgid "New size"
-msgstr ""
+msgstr "Nouvelle taille"
 
 #, php-format
 msgid "Orphan Cleaned in %s directory"
-msgstr ""
+msgstr "Orphelins supprimés dans le répertoire %s"
 
 msgid "Orphean"
-msgstr ""
+msgstr "Orphelins"
 
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 msgid "Tb"
-msgstr ""
+msgstr "To"
 
 msgid "Trash"
-msgstr ""
+msgstr "Poubelle"
 
 msgid "Used"
-msgstr ""
+msgstr "Utilisé"
 
 msgid "Vault"
-msgstr ""
+msgstr "Coffre"
 
 msgid "Vault Management"
-msgstr ""
+msgstr "Gestion du Coffre"
 
 msgid "Vault manager"
-msgstr ""
+msgstr "Administrateur du Coffre"
 
 msgid "Vault user"
-msgstr ""
+msgstr "Utilisateur du Coffre"
 
 #, php-format
 msgid "adding %s"
-msgstr ""
+msgstr "ajout de %s"
 
 msgid "analyze vaults occupation"
-msgstr ""
-
-#, php-format
-msgid "cannot write  %s"
-msgstr ""
+msgstr "Analyse des taux d'occupation des coffres"
 
 msgid "create new vault"
-msgstr ""
+msgstr "Créer un nouveau coffre"
 
 #, php-format
 msgid "create vault %s"
-msgstr ""
-
-#, php-format
-msgid "csv file <%s> wroted"
-msgstr ""
+msgstr "Création du nouveau coffre %s"
 
 msgid "delete orphan"
-msgstr ""
+msgstr "Supprimer les orphelins"
 
 msgid "increase size vault"
-msgstr ""
+msgstr "Augmenter la taille du coffre"
 
 msgid "million bytes"
-msgstr ""
+msgstr "million d'octets"
 
 msgid "million of Megabytes"
-msgstr ""
+msgstr "million de mégaoctets"
 
 msgid "move root directory vault"
-msgstr ""
+msgstr "déplacer le répertoire du coffre"
 
 #, php-format
 msgid "new directory %s"
-msgstr ""
+msgstr "nouveau répertoire %s"
 
 msgid "no vault initialised."
-msgstr ""
+msgstr "Aucun coffre d'initialisé"
 
 msgid "show vaults occupation"
-msgstr ""
+msgstr "Affiche les taux d'occupation des coffres"
 
 #, php-format
 msgid "the new size must be upper than %s"
-msgstr ""
+msgstr "La nouvelle taille doit être supérieure à %s"
 
 msgid "thousands bytes"
-msgstr ""
+msgstr "milliers d'octets"
 
 msgid "thousands of Megabytes"
-msgstr ""
+msgstr "milliers de mégaoctets"
 
 #, php-format
 msgid "vault already created %s: aborted\n"
-msgstr ""
+msgstr "coffre déjà crée %s: abandon\n"
 
 msgid "view image for free size"
-msgstr ""
+msgstr "voir l'image pour l'espace libre"
