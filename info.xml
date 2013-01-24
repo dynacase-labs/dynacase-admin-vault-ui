@@ -11,6 +11,9 @@
     </requires>
 
     <post-install>
+        <process command="programs/enable_VAULT">
+            <label>Reactivate VAULT application</label>
+        </process>
         <process command="programs/record_application VAULT I">
             <label lang="en">Record VAULT application in database</label>
         </process>
