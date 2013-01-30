@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<module name="dynacase-admin-vault-ui" disabled="no" version="3.2.5"
+<module name="dynacase-admin-vault-ui" disabled="no" version="@VERSION_VAULT@-@RELEASE_VAULT@"
     release="0">
 
     <description>UI to manage vaultn.

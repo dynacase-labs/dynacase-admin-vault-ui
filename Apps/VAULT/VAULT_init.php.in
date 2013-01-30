@@ -22,7 +22,7 @@ global $app_const;
 
 $app_const= array(
   "INIT" => "yes",
-  "VERSION" => "3.2.5-0"
+  "VERSION" => "@VERSION_VAULT@-@RELEASE_VAULT@"
 );
 
 ?>
