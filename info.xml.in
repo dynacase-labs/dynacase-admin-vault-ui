@@ -2,7 +2,7 @@
 <module name="dynacase-admin-vault-ui" disabled="no" version="@VERSION_VAULT@-@RELEASE_VAULT@"
     release="0">
 
-    <description>UI to manage vaultn.
+    <description>UI to manage vault.
     </description>
 
     <requires>
