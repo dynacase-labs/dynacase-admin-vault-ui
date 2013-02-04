@@ -113,7 +113,9 @@ function humanreadsize($bytes)
 }
 function humanreadpc($pc)
 {
-    if ($pc < 1) return sprintf("%.02f%%", $pc);
-    return sprintf("%d%%", $pc);
+  /* if ($pc < 1) return sprintf("%.02f%%", $pc); */
+  if ($pc < 1 && $pc>0) return "1%";
+  $pc = round($pc);
+  return sprintf("%d%%", $pc);
 }
 ?>
