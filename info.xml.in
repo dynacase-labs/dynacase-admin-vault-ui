@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<module name="dynacase-admin-vault-ui" disabled="no" version="@VERSION_VAULT@-@RELEASE_VAULT@"
-    release="0">
+<module name="dynacase-admin-vault-ui" disabled="no" version="@VERSION_VAULT@"
+    release="@RELEASE_VAULT@" license="@LICENSE@">
 
     <description>UI to manage vault.
     </description>
