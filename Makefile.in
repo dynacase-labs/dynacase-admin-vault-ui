@@ -15,5 +15,5 @@ SUBDIR= Actions Apps Data Images Programs Scripts
 include $(utildir)/PubRule
 
 clean:
-	/bin/rm -f *.*~ config.* Makefile configure $(appname)_init.php info.xml $(PACKAGE)-*webinst
+	/bin/rm -f *.*~ config.* Makefile configure Apps/$(appname)/$(appname)_init.php info.xml ../$(PACKAGE)-*webinst
 	/bin/rm -fr autom4te.cache
