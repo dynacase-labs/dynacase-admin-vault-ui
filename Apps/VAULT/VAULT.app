@@ -18,7 +18,7 @@ $app_desc = array (
 "displayable"	=>"Y",			//Should be displayed on an app list (Y,N)
 "with_frame"	=>"Y",			//Use multiframe ? (Y,N)
 "iorder"        =>140,
-"tag"           =>"ADMIN"
+"tag"           =>"ADMIN SYSTEM"
 );
 
 $app_acl = array (
