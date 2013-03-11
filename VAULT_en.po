@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-22 17:05+0100\n"
+"POT-Creation-Date: 2013-03-11 11:48+0100\n"
 "PO-Revision-Date: 2013-01-16 16:17+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,190 +18,249 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#, php-format
+#: Actions/VAULT/vault_view.php:110
+#, c-format
 msgid "%.02f Gb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_view.php:106
+#, c-format
 msgid "%.02f Kb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_view.php:108
+#, c-format
 msgid "%.02f Mb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_increasefs.php:72 Actions/VAULT/vault_view.php:111
+#, c-format
 msgid "%d Gb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_generatefs.php:98 Actions/VAULT/vault_increasefs.php:70
+#: Actions/VAULT/vault_view.php:107
+#, c-format
 msgid "%d Kb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_generatefs.php:99 Actions/VAULT/vault_increasefs.php:71
+#: Actions/VAULT/vault_view.php:109
+#, c-format
 msgid "%d Mb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_view.php:112
+#, c-format
 msgid "%d Tb"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_generatefs.php:97 Actions/VAULT/vault_increasefs.php:69
+#: Actions/VAULT/vault_view.php:105
+#, c-format
 msgid "%d bytes"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_generatefs.php:76 Actions/VAULT/vault_view.php:82
+#, c-format
 msgid "%d stored files"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_createfs.php:56
+#, c-format
 msgid "%s directory not empty"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_createfs.php:51 Actions/VAULT/vault_movefs.php:34
+#, c-format
 msgid "%s directory not found"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_createfs.php:53 Actions/VAULT/vault_movefs.php:35
+#, c-format
 msgid "%s directory not writable"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_increasefs.php:61
+#, c-format
 msgid "Cannot adding : [%s]"
 msgstr ""
 
+#: tempCatalog.php:1 tempCatalog.php:18
 msgid "Capacity"
 msgstr ""
 
+#: tempCatalog.php:24
 msgid "Clear orphan"
 msgstr ""
 
+#: tempCatalog.php:7
 msgid "Directory"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_clean.php:45
+#, c-format
 msgid "Error : Cleaning %s  status %d"
 msgstr ""
 
+#: tempCatalog.php:5 tempCatalog.php:20
 msgid "Free"
 msgstr ""
 
+#: tempCatalog.php:14 tempCatalog.php:35
 msgid "Gb"
 msgstr ""
 
+#: tempCatalog.php:17
 msgid "Generate new vault"
 msgstr ""
 
+#: tempCatalog.php:38
 msgid "Increase FS"
 msgstr ""
 
+#: tempCatalog.php:26
 msgid "Increase vault size"
 msgstr ""
 
+#: tempCatalog.php:10 tempCatalog.php:31
 msgid "Kb"
 msgstr ""
 
+#: tempCatalog.php:12 tempCatalog.php:33
 msgid "Mb"
 msgstr ""
 
+#: tempCatalog.php:28
 msgid "Move FS"
 msgstr ""
 
+#: tempCatalog.php:25
 msgid "Move directory"
 msgstr ""
 
+#: tempCatalog.php:6
 msgid "New Vault FS"
 msgstr ""
 
+#: tempCatalog.php:27
 msgid "New directory"
 msgstr ""
 
+#: tempCatalog.php:29
 msgid "New size"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_clean.php:44
+#, c-format
 msgid "Orphan Cleaned in %s directory"
 msgstr ""
 
+#: tempCatalog.php:4 tempCatalog.php:22
 msgid "Orphean"
 msgstr ""
 
+#: tempCatalog.php:8
 msgid "Size"
 msgstr ""
 
+#: tempCatalog.php:16 tempCatalog.php:37
 msgid "Tb"
 msgstr ""
 
+#: tempCatalog.php:3 tempCatalog.php:23
 msgid "Trash"
 msgstr ""
 
+#: tempCatalog.php:2 tempCatalog.php:19 tempCatalog.php:21
 msgid "Used"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:14
 msgid "Vault"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:15
 msgid "Vault Management"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:27
 msgid "Vault manager"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:31
 msgid "Vault user"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_increasefs.php:60
+#, c-format
 msgid "adding %s"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:38
 msgid "analyze vaults occupation"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:51
 msgid "create new vault"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_createfs.php:68
+#, c-format
 msgid "create vault %s"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:56
 msgid "delete orphan"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:61
 msgid "increase size vault"
 msgstr ""
 
+#: tempCatalog.php:11 tempCatalog.php:32
 msgid "million bytes"
 msgstr ""
 
+#: tempCatalog.php:15 tempCatalog.php:36
 msgid "million of Megabytes"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:71
 msgid "move root directory vault"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_movefs.php:37
+#, c-format
 msgid "new directory %s"
 msgstr ""
 
+#: Actions/VAULT/vault_view.php:42
 msgid "no vault initialised."
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:44
 msgid "show vaults occupation"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_increasefs.php:54
+#, c-format
 msgid "the new size must be upper than %s"
 msgstr ""
 
+#: tempCatalog.php:9 tempCatalog.php:30
 msgid "thousands bytes"
 msgstr ""
 
+#: tempCatalog.php:13 tempCatalog.php:34
 msgid "thousands of Megabytes"
 msgstr ""
 
-#, php-format
+#: Actions/VAULT/vault_createfs.php:70
+#, c-format
 msgid "vault already created %s: aborted\n"
 msgstr ""
 
+#: Apps/VAULT/VAULT.app:66
 msgid "view image for free size"
 msgstr ""
