@@ -1,14 +1,13 @@
 <head>
     <title></title>
     <link rel="icon" type="image/x-icon" href="CORE/Images/dynacase.ico">
-    <link href="lib/jquery-ui/css/smoothness/jquery-ui.css?[VERSION]" rel="stylesheet" type="text/css">
+    [CSS:CUSTOMREF]
     <!--[if lt IE 8 ]>
     <link href="CORE_ADMIN/Layout/core_admin_root_ie.css?[VERSION]" media="screen" rel="stylesheet" type="text/css"/>
     <![endif]-->
     <!--[if lt IE 9 ]>
     <link href="CORE_ADMIN/Layout/core_admin_root_ie8.css?[VERSION]" media="screen" rel="stylesheet" type="text/css"/>
     <![endif]-->
-    <link href="VAULT/Layout/vault_admin.css?[VERSION]" media="screen" rel="stylesheet" type="text/css">
 </head>
 
 <div class="ui-widget ui-widget-content ui-corner-all new-fs">

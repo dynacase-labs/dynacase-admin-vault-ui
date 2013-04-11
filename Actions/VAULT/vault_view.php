@@ -20,7 +20,7 @@ include_once ("VAULT/Class.VaultDiskStorage.php");
 include_once ("VAULT/Class.VaultDiskFsStorage.php");
 include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
-function vault_view(&$action)
+function vault_view(Action & $action)
 {
     // GetAllParameters
     $docid = GetHttpVars("id", 0);
@@ -36,6 +36,10 @@ function vault_view(&$action)
     $q->order_by = "id_fs";
     $l = $q->Query(0, 0, "TABLE");
     
+    $action->parent->addCssRef("css/dcp/jquery-ui.css");
+    $action->parent->addCssRef("VAULT:vault_admin.css");
+    
+    $tfs = array();
     if (!is_array($l) || count($l) < 1) {
         
         $action->lay->setBlockData("FS", $tfs);
@@ -113,9 +117,9 @@ function humanreadsize($bytes)
 }
 function humanreadpc($pc)
 {
-  /* if ($pc < 1) return sprintf("%.02f%%", $pc); */
-  if ($pc < 1 && $pc>0) return "1%";
-  $pc = round($pc);
-  return sprintf("%d%%", $pc);
+    /* if ($pc < 1) return sprintf("%.02f%%", $pc); */
+    if ($pc < 1 && $pc > 0) return "1%";
+    $pc = round($pc);
+    return sprintf("%d%%", $pc);
 }
 ?>
