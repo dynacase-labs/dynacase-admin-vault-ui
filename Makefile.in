@@ -1,5 +1,5 @@
 PACKAGE = dynacase-admin-vault-ui
-VERSION = @VERSION_VAULT@
+VERSION = @VERSION@
 utildir = @PUBRULE@
 pubdir = @prefix@
 srcdir = @srcdir@
@@ -10,7 +10,7 @@ GZIP_ENV = --best
 
 export PACKAGE utildir pubdir applib appname
 
-SUBDIR= Actions Apps Data Images Programs Scripts
+SUBDIR= Actions Apps Data Images Programs Scripts locale
 
 include $(utildir)/PubRule
 
