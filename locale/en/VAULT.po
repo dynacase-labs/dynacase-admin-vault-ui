@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-11 11:48+0100\n"
-"PO-Revision-Date: 2013-01-16 16:17+0100\n"
+"PO-Revision-Date: 2014-11-24 10:24+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -90,17 +90,8 @@ msgstr ""
 msgid "Capacity"
 msgstr ""
 
-#: tempCatalog.php:24
-msgid "Clear orphan"
-msgstr ""
-
 #: tempCatalog.php:7
 msgid "Directory"
-msgstr ""
-
-#: Actions/VAULT/vault_clean.php:45
-#, c-format
-msgid "Error : Cleaning %s  status %d"
 msgstr ""
 
 #: tempCatalog.php:5 tempCatalog.php:20
@@ -149,11 +140,6 @@ msgstr ""
 
 #: tempCatalog.php:29
 msgid "New size"
-msgstr ""
-
-#: Actions/VAULT/vault_clean.php:44
-#, c-format
-msgid "Orphan Cleaned in %s directory"
 msgstr ""
 
 #: tempCatalog.php:4 tempCatalog.php:22
@@ -208,10 +194,6 @@ msgstr ""
 #: Actions/VAULT/vault_createfs.php:68
 #, c-format
 msgid "create vault %s"
-msgstr ""
-
-#: Apps/VAULT/VAULT.app:56
-msgid "delete orphan"
 msgstr ""
 
 #: Apps/VAULT/VAULT.app:61

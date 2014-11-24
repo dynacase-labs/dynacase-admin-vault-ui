@@ -52,11 +52,6 @@ $action_desc = array (
    "acl"		=>"VAULT_MASTER"
   ),
   array( 
-   "name"		=>"VAULT_CLEAN",
-   "short_name"		=>N_("delete orphan"),
-   "acl"		=>"VAULT_MASTER"
-  ),
-  array( 
    "name"		=>"VAULT_INCREASEFS",
    "short_name"		=>N_("increase size vault"),
    "acl"		=>"VAULT_MASTER"

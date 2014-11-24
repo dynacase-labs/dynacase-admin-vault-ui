@@ -57,8 +57,8 @@ function vault_view(Action & $action)
             $used_size = $nf0["sum"];
             $q = new QueryDb($dbaccess, "VaultDiskFsStorage");
             
-            $no = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) from vaultdiskstorage where $sqlfs id_file not in (select vaultid from docvaultindex where docid>0)"); //Orphean
-            $nt = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) from vaultdiskstorage where $sqlfs id_file in (select vaultid from docvaultindex where docid in (select id from docread where doctype='Z'))"); //trash files
+            $no = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM vaultdiskstorage WHERE $sqlfs NOT EXISTS (SELECT 1 FROM docvaultindex WHERE vaultid = id_file AND docid > 0)"); //Orphean
+            $nt = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM (SELECT id_file, size FROM vaultdiskstorage, docvaultindex, docread WHERE $sqlfs id_file = vaultid AND docid = id AND doctype = 'Z' GROUP BY (id_file)) AS r;"); //trash files
             $free = doubleval($fs["free_size"]);
             $max = doubleval($fs["max_size"]);
             $free = $max - $used_size;

@@ -64,9 +64,6 @@
 
       
     <div>
-      [IF orphan]<input class="ui-button ui-state-default ui-corner-all float-right" type="button" 
-      onclick="document.location.href='[CORE_STANDURL]&app=VAULT&action=VAULT_CLEAN&idfs=[fsid]&clean=orphan'" 
-      value="[TEXT:Clear orphan]" />[ENDIF orphan]
       <input class="ui-button ui-state-default ui-corner-all float-right" 
 	     type="button" value="[TEXT:Move directory]"
 	     onclick="viewornot('tmove[fsid]')" />
