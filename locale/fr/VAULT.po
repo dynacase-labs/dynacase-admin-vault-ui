@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-11 11:48+0100\n"
-"PO-Revision-Date: 2013-01-30 16:28+0100\n"
+"PO-Revision-Date: 2014-11-24 10:24+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -90,18 +90,9 @@ msgstr "Ajout impossible : [%s]"
 msgid "Capacity"
 msgstr "Capacité"
 
-#: tempCatalog.php:24
-msgid "Clear orphan"
-msgstr "Supprimer les orphelins"
-
 #: tempCatalog.php:7
 msgid "Directory"
 msgstr "Répertoire"
-
-#: Actions/VAULT/vault_clean.php:45
-#, c-format
-msgid "Error : Cleaning %s  status %d"
-msgstr "Erreur : Nettoyage %s état %d"
 
 #: tempCatalog.php:5 tempCatalog.php:20
 msgid "Free"
@@ -150,11 +141,6 @@ msgstr "Nouveau répertoire"
 #: tempCatalog.php:29
 msgid "New size"
 msgstr "Nouvelle taille"
-
-#: Actions/VAULT/vault_clean.php:44
-#, c-format
-msgid "Orphan Cleaned in %s directory"
-msgstr "Orphelins supprimés dans le répertoire %s"
 
 #: tempCatalog.php:4 tempCatalog.php:22
 msgid "Orphean"
@@ -209,10 +195,6 @@ msgstr "Créer un nouveau coffre"
 #, c-format
 msgid "create vault %s"
 msgstr "Création du nouveau coffre %s"
-
-#: Apps/VAULT/VAULT.app:56
-msgid "delete orphan"
-msgstr "Supprimer les orphelins"
 
 #: Apps/VAULT/VAULT.app:61
 msgid "increase size vault"
