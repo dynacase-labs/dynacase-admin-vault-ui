@@ -20,7 +20,7 @@ include_once ("VAULT/Class.VaultDiskStorage.php");
 include_once ("VAULT/Class.VaultDiskFsStorage.php");
 include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
-function vault_generatefs(&$action)
+function vault_generatefs(Action & $action)
 {
     // GetAllParameters
     $docid = GetHttpVars("id", 0);
@@ -28,7 +28,7 @@ function vault_generatefs(&$action)
     $arrayid = strtolower(GetHttpVars("arrayid"));
     $vid = GetHttpVars("vid"); // special controlled view
     // Set the globals elements
-    $dbaccess = $action->GetParam("FREEDOM_DB");
+    $dbaccess = $action->dbaccess;
     
     $q = new QueryDb($dbaccess, "VaultDiskFsStorage");
     $q->dbaccess = $dbaccess;
@@ -37,6 +37,7 @@ function vault_generatefs(&$action)
     // SELECT count(id_file), sum(size) from vaultdiskstorage where id_file not in (select vaultid from docvaultindex); //Orphean
     $l = $q->Query(0, 0, "TABLE");
     
+    $tfs = array();
     foreach ($l as $k => $fs) {
         
         $q = new QueryDb($dbaccess, "VaultDiskStorage");
@@ -103,4 +104,3 @@ function humanreadpc($pc)
     if ($pc < 1) return sprintf("%.02f%%", $pc);
     return sprintf("%d%%", $pc);
 }
-?>

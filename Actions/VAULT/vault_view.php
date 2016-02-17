@@ -28,9 +28,7 @@ function vault_view(Action & $action)
     $arrayid = strtolower(GetHttpVars("arrayid"));
     $vid = GetHttpVars("vid"); // special controlled view
     // Set the globals elements
-    $dbaccess = $action->GetParam("FREEDOM_DB");
-    
-    $q = new QueryDb($dbaccess, "VaultDiskFsStorage");
+    $q = new QueryDb($action->dbaccess, "VaultDiskFsStorage");
     // SELECT count(id_file), sum(size) from vaultdiskstorage where id_file in (select vaultid from docvaultindex where docid in (select id from doc where doctype='Z')); // trash files
     // SELECT count(id_file), sum(size) from vaultdiskstorage where id_file not in (select vaultid from docvaultindex); //Orphean
     $q->order_by = "id_fs";
@@ -50,12 +48,12 @@ function vault_view(Action & $action)
             
             $sqlfs = "id_fs=" . intval($fs["id_fs"]) . " and ";
             
-            $q = new QueryDb($dbaccess, "VaultDiskStorage");
+            $q = new QueryDb($action->dbaccess, "VaultDiskStorage");
             
             $nf = $q->Query(0, 0, "TABLE", "select count(id_file),sum(size) from vaultdiskstorage where id_fs='" . $fs["id_fs"] . "'");
             $nf0 = $nf[0];
             $used_size = $nf0["sum"];
-            $q = new QueryDb($dbaccess, "VaultDiskFsStorage");
+            $q = new QueryDb($action->dbaccess, "VaultDiskFsStorage");
             
             $no = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM vaultdiskstorage WHERE $sqlfs NOT EXISTS (SELECT 1 FROM docvaultindex WHERE vaultid = id_file AND docid > 0)"); //Orphean
             $nt = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM (SELECT id_file, size FROM vaultdiskstorage, docvaultindex, docread WHERE $sqlfs id_file = vaultid AND docid = id AND doctype = 'Z' GROUP BY (id_file)) AS r;"); //trash files
@@ -122,4 +120,3 @@ function humanreadpc($pc)
     $pc = round($pc);
     return sprintf("%d%%", $pc);
 }
-?>

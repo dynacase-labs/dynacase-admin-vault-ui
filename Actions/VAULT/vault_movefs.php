@@ -20,14 +20,13 @@ include_once ("VAULT/Class.VaultDiskStorage.php");
 include_once ("VAULT/Class.VaultDiskFsStorage.php");
 include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
-function vault_movefs(&$action)
+function vault_movefs(Action & $action)
 {
     // GetAllParameters
     $idfs = GetHttpVars("idfs");
     $directory = GetHttpVars("directory");
     // Set the globals elements
-    $dbaccess = $action->GetParam("FREEDOM_DB");
-    $fs = new VaultDiskFsStorage($dbaccess, $idfs);
+    $fs = new VaultDiskFsStorage($action->dbaccess, $idfs);
     
     if ($fs->isAffected()) {
         
@@ -41,4 +40,3 @@ function vault_movefs(&$action)
     }
     redirect($action, "VAULT", "VAULT_VIEW", $action->GetParam("CORE_STANDURL"));
 }
-?>
