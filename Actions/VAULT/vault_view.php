@@ -22,11 +22,6 @@ include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
 function vault_view(Action & $action)
 {
-    // GetAllParameters
-    $docid = GetHttpVars("id", 0);
-    $classid = GetHttpVars("classid");
-    $arrayid = strtolower(GetHttpVars("arrayid"));
-    $vid = GetHttpVars("vid"); // special controlled view
     // Set the globals elements
     $q = new QueryDb($action->dbaccess, "VaultDiskFsStorage");
     // SELECT count(id_file), sum(size) from vaultdiskstorage where id_file in (select vaultid from docvaultindex where docid in (select id from doc where doctype='Z')); // trash files
@@ -61,12 +56,10 @@ function vault_view(Action & $action)
             $max = doubleval($fs["max_size"]);
             $free = $max - $used_size;
             $pci_used = (($max - $free) / $max * 100);
-            $pcused = humanreadpc($pci_used);
             $effused = ($max - $free - $no[0]["sum"] - $nt[0]["sum"]);
             $realused = ($max - $free);
             $pci_realused = ($realused / $max * 100);
             $pci_effused = ($effused / $max * 100);
-            $pceffused = sprintf("%d%%", $pci_effused);
             $pci_free = (100 - $pci_used);
             $pcfree = humanreadpc($pci_free);
             $tfs[$k] = array(
@@ -97,6 +90,7 @@ function vault_view(Action & $action)
             $tfs[$k]["pcorphean"] = humanreadpc($pci_orphean);
             $tfs[$k]["pcminorphean"] = ($pci_orphean > 1) ? sprintf("%.02f%%", $pci_orphean) : 1;
             $tfs[$k]["pcoccupedandpctrash"] = sprintf("%.02f%%", ($pci_free + $pci_orphean));
+            $tfs[$k]["df"] = df($fs['r_path']);
         }
         $action->lay->setBlockData("FS", $tfs);
     }
@@ -119,4 +113,13 @@ function humanreadpc($pc)
     if ($pc < 1 && $pc > 0) return "1%";
     $pc = round($pc);
     return sprintf("%d%%", $pc);
+}
+
+function df($path)
+{
+    $df = disk_free_space($path);
+    if ($df === false) {
+        return 'N/A';
+    }
+    return humanreadsize($df);
 }
