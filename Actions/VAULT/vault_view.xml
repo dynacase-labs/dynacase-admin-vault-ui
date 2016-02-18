@@ -14,9 +14,9 @@
   <input type="button" class="ui-button ui-state-default ui-corner-all" onclick="viewornot('genefs');return false" value="[TEXT:New Vault FS]" />
   <form  name="fcreatefs" style="display:inline" class="float-right"
 	 method="POST" ENCTYPE="multipart/form-data"
-	 action="[CORE_STANDURL]&app=VAULT&action=VAULT_CREATEFS">
+	 action="[CORE_STANDURL]&amp;app=VAULT&amp;action=VAULT_CREATEFS">
     <div style="display:none;" class="form-exclusive" id="genefs"> [TEXT:Directory] : 
-      <input type=text size=30 name="directory" /> [TEXT:Size] : <input type=text size=3 name="size" />
+      <input type="text" size="30" name="directory" /> [TEXT:Size] : <input type="text" size="3" name="size" />
       <select name="unitsize">
 	<option title="[TEXT:thousands bytes]" value="Kb">[TEXT:Kb]</option>
 	<option title="[TEXT:million bytes]" selected value="Mb">[TEXT:Mb]</option>
@@ -35,7 +35,7 @@
   </div>
   <div class="ui-widget-content ui-corner-bottom">
     
-    <div class="title">[TEXT:Capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree])</div>
+    <div class="title">[TEXT:Capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree]) / [TEXT:Disk free space] [df]</div>
 
     <div class="fs-size-bar">&nbsp;
       <div class="fs-size-division fs-size-trash" style="width:[pctrash]">&nbsp;</div>
@@ -77,7 +77,7 @@
     <div id="tmove[fsid]" style="display:none;" class="form-exclusive float-left">
       <form  name="move[fsid]" style="display:inline" 
 	     method="POST" ENCTYPE="multipart/form-data"
-	     action="[CORE_STANDURL]&app=VAULT&action=VAULT_MOVEFS">
+	     action="[CORE_STANDURL]&amp;app=VAULT&amp;action=VAULT_MOVEFS">
 	<input type="hidden" name="idfs" value="[fsid]" />[TEXT:New directory] <input type="text" name="directory" value="" />
 	<input class="ui-button ui-state-default ui-corner-all" type="submit" value="[TEXT:Move FS]" />
       </form>
@@ -86,7 +86,7 @@
     <div id="tincrease[fsid]" style="display:none;" class="form-exclusive float-left">
       <form  name="increase[fsid]" style="display:inline"
 	     method="POST" ENCTYPE="multipart/form-data"
-	     action="[CORE_STANDURL]&app=VAULT&action=VAULT_INCREASEFS">
+	     action="[CORE_STANDURL]&amp;app=VAULT&amp;action=VAULT_INCREASEFS">
 	<input type="hidden" size="3" name="idfs" value="[fsid]" />[TEXT:New size] <input type="text" name="size" />
 	<select name="unitsize">
 	  <option title="[TEXT:thousands bytes]" value="Kb">[TEXT:Kb]</option>

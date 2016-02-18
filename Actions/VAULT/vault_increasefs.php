@@ -20,16 +20,17 @@ include_once ("VAULT/Class.VaultDiskStorage.php");
 include_once ("VAULT/Class.VaultDiskFsStorage.php");
 include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
-function vault_increasefs(&$action)
+function vault_increasefs(Action & $action)
 {
     // GetAllParameters
     $idfs = GetHttpVars("idfs");
     $unit = GetHttpVars("unitsize");
     $size = intval(GetHttpVars("size"));
     // Set the globals elements
-    $dbaccess = $action->GetParam("FREEDOM_DB");
+    $dbaccess = $action->dbaccess;
     $fs = new VaultDiskFsStorage($dbaccess, $idfs);
     
+    $size_in_bytes = null;
     switch ($unit) {
         case "Kb":
             $size_in_bytes = $size * 1024;
@@ -71,4 +72,3 @@ function humanreadsize($bytes)
     if (abs($bytes) < 1048576 * 1024) return sprintf(_("%d Mb") , $bytes / 1048576);
     return sprintf(_("%d Gb") , $bytes / 1048576 / 1024);
 }
-?>

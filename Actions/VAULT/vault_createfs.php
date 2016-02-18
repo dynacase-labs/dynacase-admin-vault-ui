@@ -21,7 +21,7 @@ include_once ("VAULT/Class.VaultDiskFsStorage.php");
 include_once ("VAULT/Class.VaultFile.php");
 include_once ("FDL/Class.DocVaultIndex.php");
 // -----------------------------------
-function vault_createfs(&$action)
+function vault_createfs(Action & $action)
 {
     // GetAllParameters
     $unit = GetHttpVars("unitsize");
@@ -29,6 +29,7 @@ function vault_createfs(&$action)
     $dirname = GetHttpVars("directory");
     $fsname = $dirname;
     
+    $size_in_bytes = null;
     switch ($unit) {
         case "Kb":
             $size_in_bytes = $size * 1024;
@@ -46,9 +47,11 @@ function vault_createfs(&$action)
             $size_in_bytes = $size * 1024 * 1024 * 1024 * 1024;
             break;
     }
-    $dbaccess = $action->GetParam("FREEDOM_DB");
     
-    if (!is_dir($dirname)) $err = sprintf(_("%s directory not found") , $dirname);
+    $err = '';
+    if (!is_dir($dirname)) {
+        $err = sprintf(_("%s directory not found") , $dirname);
+    }
     if ($err == "") {
         if (!is_writable($dirname)) $err = sprintf(_("%s directory not writable") , $dirname);
         if ($err == "") {
@@ -57,11 +60,11 @@ function vault_createfs(&$action)
             
             if ($err == "") {
                 
-                $vf = new VaultFile($dbaccess);
+                $vf = new VaultFile($action->dbaccess);
                 //  print_r2($vf);
-                $q = new QueryDb($dbaccess, "VaultDiskFsStorage");
+                $q = new QueryDb($action->dbaccess, "VaultDiskFsStorage");
                 $q->AddQuery("r_path='" . pg_escape_string(trim($dirname)) . "'");
-                $l = $q->Query(0, 0, "TABLE");
+                $q->Query(0, 0, "TABLE");
                 
                 if ($q->nb == 0) {
                     $vf->storage->fs->createArch($size_in_bytes, $dirname, $fsname);
@@ -76,4 +79,3 @@ function vault_createfs(&$action)
     if ($err != "") $action->AddWarningMsg($err);
     redirect($action, "VAULT", "VAULT_VIEW", $action->GetParam("CORE_STANDURL"));
 }
-?>
