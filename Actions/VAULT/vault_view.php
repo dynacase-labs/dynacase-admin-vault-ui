@@ -90,7 +90,13 @@ function vault_view(Action & $action)
             $tfs[$k]["pcorphean"] = humanreadpc($pci_orphean);
             $tfs[$k]["pcminorphean"] = ($pci_orphean > 1) ? sprintf("%.02f%%", $pci_orphean) : 1;
             $tfs[$k]["pcoccupedandpctrash"] = sprintf("%.02f%%", ($pci_free + $pci_orphean));
-            $tfs[$k]["df"] = df($fs['r_path']);
+            $df = df($fs['r_path']);
+            $tfs[$k]["df_total"] = $df['total'];
+            $tfs[$k]["df_used"] = $df['used'];
+            $tfs[$k]["df_free"] = $df['free'];
+            $tfs[$k]["df_%free"] = $df['%free'];
+            $tfs[$k]["referenced"] = humanreadsize($effused - $no[0]["sum"] - $nt[0]["sum"]);
+            $tfs[$k]["pcreferenced"] = humanreadpc(100 * ($effused - $no[0]["sum"] - $nt[0]["sum"]) / $max);
         }
         $action->lay->setBlockData("FS", $tfs);
     }
@@ -99,13 +105,13 @@ function vault_view(Action & $action)
 function humanreadsize($bytes)
 {
     if ($bytes < 1024) return sprintf(_("%d bytes") , $bytes);
-    if ($bytes < 10240) return sprintf(_("%.02f Kb") , $bytes / 1024);
-    if ($bytes < 1048576) return sprintf(_("%d Kb") , $bytes / 1024);
-    if ($bytes < 10485760) return sprintf(_("%.02f Mb") , $bytes / 1048576);
-    if ($bytes < 1048576 * 1024) return sprintf(_("%d Mb") , $bytes / 1048576);
-    if ($bytes < 1048576 * 10240) return sprintf(_("%.02f Gb") , $bytes / 1048576 / 1024);
-    if ($bytes < 1048576 * 1048576) return sprintf(_("%d Gb") , $bytes / 1048576 / 1024);
-    return sprintf(_("%d Tb") , $bytes / 1048576 / 1048576);
+    if ($bytes < 10240) return sprintf(_("%.02f KB") , $bytes / 1024);
+    if ($bytes < 1048576) return sprintf(_("%d KB") , $bytes / 1024);
+    if ($bytes < 10485760) return sprintf(_("%.02f MB") , $bytes / 1048576);
+    if ($bytes < 1048576 * 1024) return sprintf(_("%d MB") , $bytes / 1048576);
+    if ($bytes < 1048576 * 10240) return sprintf(_("%.02f GB") , $bytes / 1048576 / 1024);
+    if ($bytes < 1048576 * 1048576) return sprintf(_("%d GB") , $bytes / 1048576 / 1024);
+    return sprintf(_("%d TB") , $bytes / 1048576 / 1048576);
 }
 function humanreadpc($pc)
 {
@@ -117,9 +123,13 @@ function humanreadpc($pc)
 
 function df($path)
 {
-    $df = disk_free_space($path);
-    if ($df === false) {
-        return 'N/A';
-    }
-    return humanreadsize($df);
+    $df = array(
+        'total' => disk_total_space($path) ,
+        'free' => disk_free_space($path)
+    );
+    $df['used'] = ($df['total'] !== false && $df['free'] !== false) ? humanreadsize($df['total'] - $df['free']) : 'N/A';
+    $df['%free'] = ($df['free'] !== false && $df['total'] !== false) ? humanreadpc(100 * $df['free'] / $df['total']) : 'N/A';
+    $df['total'] = ($df['total'] !== false) ? humanreadsize($df['total']) : 'N/A';
+    $df['free'] = ($df['free'] !== false) ? humanreadsize($df['free']) : 'N/A';
+    return $df;
 }

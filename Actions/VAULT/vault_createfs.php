@@ -31,19 +31,19 @@ function vault_createfs(Action & $action)
     
     $size_in_bytes = null;
     switch ($unit) {
-        case "Kb":
+        case "KB":
             $size_in_bytes = $size * 1024;
             break;
 
-        case "Mb":
+        case "MB":
             $size_in_bytes = $size * 1024 * 1024;
             break;
 
-        case "Gb":
+        case "GB":
             $size_in_bytes = $size * 1024 * 1024 * 1024;
             break;
 
-        case "Tb":
+        case "TB":
             $size_in_bytes = $size * 1024 * 1024 * 1024 * 1024;
             break;
     }

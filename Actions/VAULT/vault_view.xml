@@ -18,10 +18,10 @@
     <div style="display:none;" class="form-exclusive" id="genefs"> [TEXT:Directory] : 
       <input type="text" size="30" name="directory" /> [TEXT:Size] : <input type="text" size="3" name="size" />
       <select name="unitsize">
-	<option title="[TEXT:thousands bytes]" value="Kb">[TEXT:Kb]</option>
-	<option title="[TEXT:million bytes]" selected value="Mb">[TEXT:Mb]</option>
-	<option  value="Gb" title="[TEXT:thousands of Megabytes]">[TEXT:Gb]</option>
-	<option title="[TEXT:million of Megabytes]" value="Tb">[TEXT:Tb]</option>
+	<option title="[TEXT:thousands bytes]" value="KB">[TEXT:KB]</option>
+	<option title="[TEXT:million bytes]" selected value="MB">[TEXT:MB]</option>
+	<option  value="GB" title="[TEXT:thousands of Megabytes]">[TEXT:GB]</option>
+	<option title="[TEXT:million of Megabytes]" value="TB">[TEXT:TB]</option>
       </select>
       <input class="ui-button ui-state-default ui-corner-all" type="submit" value="[TEXT:Generate new vault]" />
     </div>
@@ -35,12 +35,13 @@
   </div>
   <div class="ui-widget-content ui-corner-bottom">
     
-    <div class="title">[TEXT:Capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree]) / [TEXT:Disk free space] [df]</div>
+    <div class="title">[TEXT:Logical capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree])</div>
+    <div class="title">[TEXT:Physical capacity] [df_total] / [TEXT:df_used] [df_used] / [TEXT:df_free] [df_free] ([df_%free])</div>
 
     <div class="fs-size-bar">&nbsp;
       <div class="fs-size-division fs-size-trash" style="width:[pctrash]">&nbsp;</div>
       <div class="fs-size-division fs-size-orphan" style="width:[pcorphean]">&nbsp;</div>
-      <div class="fs-size-division fs-size-used" style="width:[pcoccuped]">&nbsp;</div>
+      <div class="fs-size-division fs-size-used" style="width:[pcreferenced]">&nbsp;</div>
       <div class="ui-helper-clearfix"></div>
     </div>
 
@@ -48,7 +49,7 @@
 
       <div class="fs-line">
 	<div class="fs-size-division fs-size-used">&nbsp;</div>
-	<div class="fs-size-textbar-content">[TEXT:Used] [used] ([pcoccuped])</div>
+	<div class="fs-size-textbar-content">[TEXT:Referenced] [referenced] ([pcreferenced])</div>
 
 	<div class="fs-size-division fs-size-orphan" >&nbsp;</div>
 	<div class="fs-size-textbar-content">[TEXT:Orphean]  [orphean_size] ([pcorphean])</div>
@@ -68,7 +69,7 @@
 	     type="button" value="[TEXT:Move directory]"
 	     onclick="viewornot('tmove[fsid]')" />
       <input  class="ui-button ui-state-default ui-corner-all float-right" 
-	      type="button" value="[TEXT:Increase vault size]"
+	      type="button" value="[TEXT:Modify logical capacity]"
 	      onclick="viewornot('tincrease[fsid]')"/> 
       
       <div class="ui-helper-clearfix"></div>  
@@ -87,14 +88,14 @@
       <form  name="increase[fsid]" style="display:inline"
 	     method="POST" ENCTYPE="multipart/form-data"
 	     action="[CORE_STANDURL]&amp;app=VAULT&amp;action=VAULT_INCREASEFS">
-	<input type="hidden" size="3" name="idfs" value="[fsid]" />[TEXT:New size] <input type="text" name="size" />
+	<input type="hidden" size="3" name="idfs" value="[fsid]" />[TEXT:New capacity] <input type="text" name="size" />
 	<select name="unitsize">
-	  <option title="[TEXT:thousands bytes]" value="Kb">[TEXT:Kb]</option>
-	  <option title="[TEXT:million bytes]" selected value="Mb">[TEXT:Mb]</option>
-	  <option  value="Gb" title="[TEXT:thousands of Megabytes]">[TEXT:Gb]</option>
-	  <option title="[TEXT:million of Megabytes]" value="Tb">[TEXT:Tb]</option>
+	  <option title="[TEXT:thousands bytes]" value="KB">[TEXT:KB]</option>
+	  <option title="[TEXT:million bytes]" value="MB" selected>[TEXT:MB]</option>
+	  <option title="[TEXT:thousands of Megabytes]" value="GB">[TEXT:GB]</option>
+	  <option title="[TEXT:million of Megabytes]" value="TB">[TEXT:TB]</option>
 	</select>
-	<input class="ui-button ui-state-default ui-corner-all" type="submit" value="[TEXT:Increase FS]" />
+	<input class="ui-button ui-state-default ui-corner-all" type="submit" value="[TEXT:Apply new capacity]" />
       </form>
     </div>
 

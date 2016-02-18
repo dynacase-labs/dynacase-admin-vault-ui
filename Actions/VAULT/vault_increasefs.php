@@ -32,19 +32,19 @@ function vault_increasefs(Action & $action)
     
     $size_in_bytes = null;
     switch ($unit) {
-        case "Kb":
+        case "KB":
             $size_in_bytes = $size * 1024;
             break;
 
-        case "Mb":
+        case "MB":
             $size_in_bytes = $size * 1024 * 1024;
             break;
 
-        case "Gb":
+        case "GB":
             $size_in_bytes = $size * 1024 * 1024 * 1024;
             break;
 
-        case "Tb":
+        case "TB":
             $size_in_bytes = $size * 1024 * 1024 * 1024 * 1024;
             break;
     }
@@ -68,7 +68,7 @@ function vault_increasefs(Action & $action)
 function humanreadsize($bytes)
 {
     if (abs($bytes) < 1024) return sprintf(_("%d bytes") , $bytes);
-    if (abs($bytes) < 1048576) return sprintf(_("%d Kb") , $bytes / 1024);
-    if (abs($bytes) < 1048576 * 1024) return sprintf(_("%d Mb") , $bytes / 1048576);
-    return sprintf(_("%d Gb") , $bytes / 1048576 / 1024);
+    if (abs($bytes) < 1048576) return sprintf(_("%d KB") , $bytes / 1024);
+    if (abs($bytes) < 1048576 * 1024) return sprintf(_("%d MB") , $bytes / 1048576);
+    return sprintf(_("%d GB") , $bytes / 1048576 / 1024);
 }
