@@ -96,8 +96,8 @@ function vault_generatefs(Action & $action)
 function humanreadsize($bytes)
 {
     if ($bytes < 1024) return sprintf(_("%d bytes") , $bytes);
-    if ($bytes < 1048576) return sprintf(_("%d Kb") , $bytes / 1024);
-    return sprintf(_("%d Mb") , $bytes / 1048576);
+    if ($bytes < 1048576) return sprintf(_("%d KB") , $bytes / 1024);
+    return sprintf(_("%d MB") , $bytes / 1048576);
 }
 function humanreadpc($pc)
 {

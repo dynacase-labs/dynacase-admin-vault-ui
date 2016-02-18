@@ -1,15 +1,15 @@
 # French translations for dynacase-admin-uis package
 # Traductions françaises du paquet dynacase-admin-uis.
-# Copyright (C) 2016 THE dynacase-admin-uis'S COPYRIGHT HOLDER
+# Copyright (C) 2013 THE dynacase-admin-uis'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the dynacase-admin-uis package.
-# Automatically generated, 2016.
+# Automatically generated, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 15:30+0100\n"
-"PO-Revision-Date: 2016-02-17 15:38+0100\n"
+"POT-Creation-Date: 2016-02-18 15:16+0100\n"
+"PO-Revision-Date: 2016-02-18 15:14+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -19,31 +19,31 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, php-format
-msgid "%.02f Gb"
+msgid "%.02f GB"
 msgstr ""
 
 #, php-format
-msgid "%.02f Kb"
+msgid "%.02f KB"
 msgstr ""
 
 #, php-format
-msgid "%.02f Mb"
+msgid "%.02f MB"
 msgstr ""
 
 #, php-format
-msgid "%d Gb"
+msgid "%d GB"
 msgstr ""
 
 #, php-format
-msgid "%d Kb"
+msgid "%d KB"
 msgstr ""
 
 #, php-format
-msgid "%d Mb"
+msgid "%d MB"
 msgstr ""
 
 #, php-format
-msgid "%d Tb"
+msgid "%d TB"
 msgstr ""
 
 #, php-format
@@ -66,6 +66,9 @@ msgstr ""
 msgid "%s directory not writable"
 msgstr ""
 
+msgid "Apply new capacity"
+msgstr ""
+
 #, php-format
 msgid "Cannot adding : [%s]"
 msgstr ""
@@ -76,28 +79,25 @@ msgstr ""
 msgid "Directory"
 msgstr ""
 
-msgid "Disk free space"
-msgstr "Espace disque disponible"
-
 msgid "Free"
 msgstr ""
 
-msgid "Gb"
+msgid "GB"
 msgstr ""
 
 msgid "Generate new vault"
 msgstr ""
 
-msgid "Increase FS"
+msgid "KB"
 msgstr ""
 
-msgid "Increase vault size"
+msgid "Logical capacity"
 msgstr ""
 
-msgid "Kb"
+msgid "MB"
 msgstr ""
 
-msgid "Mb"
+msgid "Modify logical capacity"
 msgstr ""
 
 msgid "Move FS"
@@ -109,19 +109,25 @@ msgstr ""
 msgid "New Vault FS"
 msgstr ""
 
-msgid "New directory"
+msgid "New capacity"
 msgstr ""
 
-msgid "New size"
+msgid "New directory"
 msgstr ""
 
 msgid "Orphean"
 msgstr ""
 
+msgid "Physical capacity"
+msgstr ""
+
+msgid "Referenced"
+msgstr ""
+
 msgid "Size"
 msgstr ""
 
-msgid "Tb"
+msgid "TB"
 msgstr ""
 
 msgid "Trash"
@@ -155,6 +161,12 @@ msgstr ""
 #, php-format
 msgid "create vault %s"
 msgstr ""
+
+msgid "df_free"
+msgstr "Free"
+
+msgid "df_used"
+msgstr "Used"
 
 msgid "increase size vault"
 msgstr ""
