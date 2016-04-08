@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <module name="dynacase-admin-vault-ui" disabled="no" version="@VERSION@"
-    release="@RELEASE@" license="@LICENSE@">
+    release="@RELEASE@" license="http://www.gnu.org/licenses/lgpl-3.0.txt GNU Lesser General Public License v3.0">
 
     <description>UI to manage vault.
     </description>
