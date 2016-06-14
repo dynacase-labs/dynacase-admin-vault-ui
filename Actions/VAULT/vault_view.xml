@@ -36,7 +36,6 @@
   <div class="ui-widget-content ui-corner-bottom">
     
     <div class="title">[TEXT:Logical capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree])</div>
-    <div class="title">[TEXT:Physical capacity] [df_total] / [TEXT:df_used] [df_used] / [TEXT:df_free] [df_free] ([df_%free])</div>
 
     <div class="fs-size-bar">&nbsp;
       <div class="fs-size-division fs-size-trash" style="width:[pctrash]">&nbsp;</div>
@@ -59,12 +58,12 @@
 
       </div>
       <div class="ui-helper-clearfix"></div>  
-    
 
     </div>
 
-      
-    <div>
+      <div class="info">[TEXT:Physical capacity] [df_total] / [TEXT:df_used] [df_used] / [TEXT:df_free] [df_free] ([df_%free])</div>
+
+      <div>
       <input class="ui-button ui-state-default ui-corner-all float-right" 
 	     type="button" value="[TEXT:Move directory]"
 	     onclick="viewornot('tmove[fsid]')" />

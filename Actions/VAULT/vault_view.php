@@ -50,51 +50,48 @@ function vault_view(Action & $action)
             
             $no = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM vaultdiskstorage WHERE $sqlfs NOT EXISTS (SELECT 1 FROM docvaultindex WHERE vaultid = id_file AND docid > 0)"); //Orphean
             $nt = $q->Query(0, 0, "TABLE", "SELECT count(id_file), sum(size) FROM (SELECT id_file, size FROM vaultdiskstorage, docvaultindex, docread WHERE $sqlfs id_file = vaultid AND docid = id AND doctype = 'Z' GROUP BY (id_file)) AS r;"); //trash files
-            $free = doubleval($fs["free_size"]);
             $max = doubleval($fs["max_size"]);
             $free = $max - $used_size;
-            $pci_used = (($max - $free) / $max * 100);
+            $pci_used = ($used_size * 100 / $max);
             $effused = ($max - $free - $no[0]["sum"] - $nt[0]["sum"]);
             $realused = ($max - $free);
             $pci_realused = ($realused / $max * 100);
-            $pci_effused = ($effused / $max * 100);
+            
             $pci_free = (100 - $pci_used);
             $pcfree = humanreadpc($pci_free);
+            
             $tfs[$k] = array(
-                "pcoccuped" => humanreadpc($pci_effused) ,
                 "pcfree" => $pcfree,
                 "fsid" => $fs["id_fs"],
                 "free" => humanreadsize($free) ,
                 "total" => humanreadsize($max) ,
-                "used" => humanreadsize($effused) ,
-                "realused" => humanreadsize($realused) ,
+                "used" => humanreadsize($realused) ,
                 "pcrealused" => humanreadpc($pci_realused) ,
                 "path" => $fs["r_path"]
             );
             
             $tfs[$k]["count"] = sprintf(_("%d stored files") , $nf0["count"]);
             $tfs[$k]["orphan"] = ($no[0]["count"] > 0);
+            
             $tfs[$k]["orphean_count"] = $no[0]["count"];
             $tfs[$k]["orphean_size"] = humanreadsize($no[0]["sum"]);
-            $pci_orphean = (($no[0]["sum"] / $max) * 100);
-            //if (($pci_orphean<1) && ($no[0]["count"]>0)) $pci_orphean=1;
+            
             $tfs[$k]["trash_count"] = $nt[0]["count"];
             $tfs[$k]["trash_size"] = humanreadsize($nt[0]["sum"]);
+            
             $pci_trash = (($nt[0]["sum"] / $max) * 100);
             $tfs[$k]["pctrash"] = humanreadpc($pci_trash);
-            $tfs[$k]["pcminfree"] = ($pci_free > 1) ? sprintf("%.02f%%", $pci_free) : 1;
-            $tfs[$k]["pcminoccuped"] = ($pci_effused > 1) ? sprintf("%.02f%%", $pci_effused) : 1;
-            $tfs[$k]["pcmintrash"] = ($pci_trash > 1) ? sprintf("%.02f%%", $pci_trash) : 1;
+            
+            $pci_orphean = (($no[0]["sum"] / $max) * 100);
             $tfs[$k]["pcorphean"] = humanreadpc($pci_orphean);
-            $tfs[$k]["pcminorphean"] = ($pci_orphean > 1) ? sprintf("%.02f%%", $pci_orphean) : 1;
-            $tfs[$k]["pcoccupedandpctrash"] = sprintf("%.02f%%", ($pci_free + $pci_orphean));
+            
             $df = df($fs['r_path']);
             $tfs[$k]["df_total"] = $df['total'];
             $tfs[$k]["df_used"] = $df['used'];
             $tfs[$k]["df_free"] = $df['free'];
             $tfs[$k]["df_%free"] = $df['%free'];
-            $tfs[$k]["referenced"] = humanreadsize($effused - $no[0]["sum"] - $nt[0]["sum"]);
-            $tfs[$k]["pcreferenced"] = humanreadpc(100 * ($effused - $no[0]["sum"] - $nt[0]["sum"]) / $max);
+            $tfs[$k]["referenced"] = humanreadsize($effused);
+            $tfs[$k]["pcreferenced"] = humanreadpc(100 * ($effused) / $max);
         }
         $action->lay->setBlockData("FS", $tfs);
     }
