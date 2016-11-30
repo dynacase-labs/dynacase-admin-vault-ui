@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 15:16+0100\n"
+"POT-Creation-Date: 2016-11-30 13:55+0100\n"
 "PO-Revision-Date: 2016-06-14 09:41+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -118,10 +118,13 @@ msgstr ""
 msgid "Orphean"
 msgstr ""
 
-msgid "Physical capacity of the filesystem"
+msgid "Physical capacity"
 msgstr ""
 
 msgid "Referenced"
+msgstr ""
+
+msgid "Reset computed size"
 msgstr ""
 
 msgid "Size"
@@ -185,6 +188,9 @@ msgid "new directory %s"
 msgstr ""
 
 msgid "no vault initialised."
+msgstr ""
+
+msgid "reset computed sizes"
 msgstr ""
 
 msgid "show vaults occupation"

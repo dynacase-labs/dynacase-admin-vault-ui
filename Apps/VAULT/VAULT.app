@@ -56,6 +56,11 @@ $action_desc = array (
    "short_name"		=>N_("increase size vault"),
    "acl"		=>"VAULT_MASTER"
   ),
+    array(
+        "name"		=>"VAULT_RESETSIZE",
+        "short_name"		=>N_("reset computed sizes"),
+        "acl"		=>"VAULT_MASTER"
+    ),
   array( 
    "name"		=>"VAULT_DISKIMAGE",
    "short_name"		=>N_("view image for free size"),

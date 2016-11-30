@@ -29,15 +29,15 @@
 </div>
 
 [BLOCK FS]
-<div class="ui-widget ui-corner-all fs-descr">
+<div class="ui-widget ui-corner-all fs-descr [IF isoverhide]fs-overhide[ENDIF isoverhide]" >
   <div class="ui-widget ui-widget-header ui-corner-top">
   [path]
   </div>
   <div class="ui-widget-content ui-corner-bottom">
     
-    <div class="title">[TEXT:Logical capacity] [total] / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree])</div>
+      <div class="title">[TEXT:Logical capacity] : <b>[total]</b> / [count] / [TEXT:Used] [used] [pcrealused] / [TEXT:Free] [free] ([pcfree])</div>
 
-    <div class="fs-size-bar">&nbsp;
+    <div class="fs-size-bar">
       <div class="fs-size-division fs-size-trash" style="width:[pctrash]">&nbsp;</div>
       <div class="fs-size-division fs-size-orphan" style="width:[pcorphean]">&nbsp;</div>
       <div class="fs-size-division fs-size-used" style="width:[pcreferenced]">&nbsp;</div>
@@ -61,17 +61,23 @@
 
     </div>
 
-      <div class="info">[TEXT:Physical capacity] [df_total] / [TEXT:df_used] [df_used] / [TEXT:df_free] [df_free] ([df_%free])</div>
+      <div class="info">[TEXT:Physical capacity] : [df_total] / [TEXT:df_used] [df_used] / [TEXT:df_free] <b>[df_free]</b> ([df_%free])</div>
 
       <div>
-      <input class="ui-button ui-state-default ui-corner-all float-right" 
+      <input class="ui-button ui-state-default ui-corner-all "
 	     type="button" value="[TEXT:Move directory]"
 	     onclick="viewornot('tmove[fsid]')" />
-      <input  class="ui-button ui-state-default ui-corner-all float-right" 
+      <input  class="ui-button ui-state-default ui-corner-all "
 	      type="button" value="[TEXT:Modify logical capacity]"
-	      onclick="viewornot('tincrease[fsid]')"/> 
-      
-      <div class="ui-helper-clearfix"></div>  
+	      onclick="viewornot('tincrease[fsid]')"/>
+
+          [IF MISMATCHSIZE]
+          <input  class="ui-button ui-state-default ui-corner-all mismatch"
+                  type="button" value="[TEXT:Reset computed size]" title="[mismatchmessage]"
+                  onclick="window.location.href='?app=VAULT&amp;action=VAULT_RESETSIZE&amp;idfs=[fsid]'"/>
+
+          [ENDIF MISMATCHSIZE]
+          <div class="ui-helper-clearfix"></div>
     </div>
 
     <div id="tmove[fsid]" style="display:none;" class="form-exclusive float-left">

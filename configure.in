@@ -22,26 +22,6 @@ AC_SUBST(APPNAME)
 APPNAME=DYNACASE_ADMIN_UIS
 ac_default_prefix=/var/www/dynacase/
 
-VERSION_ACCESS=`cat dynacase-admin-access-ui/VERSION`
-AC_SUBST(VERSION_ACCESS)
-RELEASE_ACCESS=`cat dynacase-admin-access-ui/RELEASE`
-AC_SUBST(RELEASE_ACCESS)
-VERSION_APPMNG=`cat dynacase-admin-appmng-ui/VERSION`
-AC_SUBST(VERSION_APPMNG)
-RELEASE_APPMNG=`cat dynacase-admin-appmng-ui/RELEASE`
-AC_SUBST(RELEASE_APPMNG)
-VERSION_FUSERS=`cat dynacase-admin-fusers-ui/VERSION`
-AC_SUBST(VERSION_FUSERS)
-RELEASE_FUSERS=`cat dynacase-admin-fusers-ui/RELEASE`
-AC_SUBST(RELEASE_FUSERS)
-VERSION_VAULT=`cat dynacase-admin-vault-ui/VERSION`
-AC_SUBST(VERSION_VAULT)
-RELEASE_VAULT=`cat dynacase-admin-vault-ui/RELEASE`
-AC_SUBST(RELEASE_VAULT)
-VERSION_DOCADMIN=`cat dynacase-admin-docadmin-ui/VERSION`
-AC_SUBST(VERSION_DOCADMIN)
-RELEASE_DOCADMIN=`cat dynacase-admin-docadmin-ui/RELEASE`
-AC_SUBST(RELEASE_DOCADMIN)
 
 AC_SUBST(PUBRULE)
 PUBRULE="$(pwd)/buildTools"
