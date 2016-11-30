@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dynacase-admin-uis\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-18 15:16+0100\n"
-"PO-Revision-Date: 2016-06-14 09:41+0200\n"
+"POT-Creation-Date: 2016-11-30 13:55+0100\n"
+"PO-Revision-Date: 2016-11-30 13:55+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: fr\n"
@@ -124,6 +124,9 @@ msgstr "Capacité physique du système de fichiers"
 msgid "Referenced"
 msgstr "Référencés"
 
+msgid "Reset computed size"
+msgstr "Réinitialisation des tailles calculées"
+
 msgid "Size"
 msgstr "Taille"
 
@@ -186,6 +189,9 @@ msgstr "nouveau répertoire %s"
 
 msgid "no vault initialised."
 msgstr "Aucun coffre d'initialisé"
+
+msgid "reset computed sizes"
+msgstr "Recalcul des tailles des répertoires"
 
 msgid "show vaults occupation"
 msgstr "Affiche les taux d'occupation des coffres"

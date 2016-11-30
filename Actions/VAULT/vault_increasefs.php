@@ -48,13 +48,13 @@ function vault_increasefs(Action & $action)
     }
     
     if ($fs->isAffected()) {
-        
-        if ($size_in_bytes < ($fs->max_size - $fs->free_size)) {
-            $action->AddWarningMsg(sprintf(_("the new size must be upper than %s") , humanreadsize($fs->max_size - $fs->free_size)));
+        $vaultSize = $fs->getSize();
+        if ($size_in_bytes < $vaultSize) {
+            $action->AddWarningMsg(sprintf(_("the new size must be upper than %s") , humanreadsize($vaultSize)));
         } else {
             $diff = $size_in_bytes - $fs->max_size;
             $fs->max_size = $size_in_bytes;
-            $fs->free_size+= $diff;
+            
             $err = $fs->modify();
             if ($err == "") $action->AddWarningMsg(sprintf(_("adding %s") , humanreadsize($diff)));
             else $action->AddWarningMsg(sprintf(_("Cannot adding : [%s]") , $err));
